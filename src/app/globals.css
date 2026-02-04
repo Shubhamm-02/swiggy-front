@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #02060c;
+  --swiggy-orange: #ff5200;
+  --gray-text: #686b78;
+  --light-gray: #e4e6eb;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Gilroy', 'Proxima Nova', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fallback for fonts since we don't have the actual files locally */
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy'), local('Gilroy-Bold'), url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/Gilroy-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy'), local('Gilroy-Medium'), url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/Gilroy-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy'), local('Gilroy-Regular'), url('https://media-assets.swiggy.com/dls-web-assets/dls/fonts/Gilroy-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom Utility Classes */
+.container-max {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-swiggy-orange {
+  color: var(--swiggy-orange);
+}
+
+.bg-swiggy-orange {
+  background-color: var(--swiggy-orange);
+}
+
+/* Hide scrollbar for horizontal scrolling areas */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

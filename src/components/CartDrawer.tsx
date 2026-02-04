@@ -272,10 +272,10 @@ export function CartDrawer() {
                         pincode: selectedAddress.pincode,
                       };
                       const result = await placeOrderWithApi(delivery_address);
-                      if (result?.orderId) {
+                      if (result && 'orderId' in result) {
                         setLastOrder({ orderId: result.orderId, total: result.total, items: items.map((i) => ({ name: i.name, price: i.price, quantity: i.quantity })), restaurantName });
                         setCheckoutStep('success');
-                      } else if (result?.error) {
+                      } else if (result && 'error' in result) {
                         setLastOrder(null);
                         setCheckoutStep('cart');
                       }
@@ -287,7 +287,7 @@ export function CartDrawer() {
                       }
                     }
                   }}
-                  disabled={user && !selectedAddress}
+                  disabled={!!user && !selectedAddress}
                   className="flex-1 py-2.5 rounded-lg bg-[#ff5200] text-white text-sm font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Place Order
